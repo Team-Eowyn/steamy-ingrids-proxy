@@ -1,0 +1,26 @@
+config:
+  target: 'http://localhost:5678'
+  phases:
+    - duration: 20
+      arrivalRate: 5
+    - duration: 60
+      arrivalRate: 5
+      rampTo: 40
+    - duration: 60
+      arrivalRate: 40
+      rampTo: 60
+    - duration: 70
+      arrivalRate: 60
+  # defaults:
+  #   headers:
+  #     x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - flow:
+    - loop:
+      - get:
+          url: "/mainbody/{{ $loopElement }}"
+      over:
+        - 9999950
+        - 9999951
+        - 9999952
+        - 9999953
