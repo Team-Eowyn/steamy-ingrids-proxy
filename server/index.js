@@ -18,7 +18,7 @@ app.use(express.static(`${__dirname}/../public`));
 // );
 
 const sidebarProxy = createProxyMiddleware({
-  target: 'http://ec2-3-23-61-151.us-east-2.compute.amazonaws.com:1992',
+  target: 'http://ec2-18-217-227-162.us-east-2.compute.amazonaws.com',
   changeOrigin: true,
 });
 
